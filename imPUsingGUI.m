@@ -78,59 +78,93 @@ function anticlockwise_Callback(hObject, eventdata, handles)
 % hObject    handle to anticlockwise (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+a=getappdata(0,'a');
+aclock=a;
+aclock=imrotate(aclock,90);
+axes(handles.axes1);
+imshow(aclock);
 
 % --- Executes on button press in clockwise.
 function clockwise_Callback(hObject, eventdata, handles)
 % hObject    handle to clockwise (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+a=getappdata(0,'a');
+aclock=a;
+aclock=imrotate(aclock,270);
+axes(handles.axes1);
+imshow(aclock);
 
 % --- Executes on button press in hist.
 function hist_Callback(hObject, eventdata, handles)
 % hObject    handle to hist (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+a=getappdata(0,'a');
+ahist=a;
+ahist=rgb2gray(ahist);
+axes(handles.axes1);
+imhist(ahist);
 
 % --- Executes on button press in complement.
 function complement_Callback(hObject, eventdata, handles)
 % hObject    handle to complement (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+a=getappdata(0,'a');
+acomp=a;
+acomp=imcomplement(acomp);
+axes(handles.axes1);
+imshow(acomp);
 
 % --- Executes on button press in edge.
 function edge_Callback(hObject, eventdata, handles)
 % hObject    handle to edge (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+a=getappdata(0,'a');
+aedge=a;
+aedge=rgb2gray(aedge);
+aedge=edge(aedge,'Canny')'
+axes(handles.axes1);
+imshow(aedge);
 
 % --- Executes on button press in uploadimage.
 function uploadimage_Callback(hObject, eventdata, handles)
 % hObject    handle to uploadimage (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+a=uigetfile('.jpg')
+a=imread(a);
+axes(handles.axes1);
+imshow(a);
+setappdata(0,'a',a)
 
 % --- Executes on button press in rgb2gray.
 function rgb2gray_Callback(hObject, eventdata, handles)
 % hObject    handle to rgb2gray (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+a=getappdata(0,'a');
+agray=rgb2gray(a);
+axes(handles.axes1);
+imshow(agray);
 
 % --- Executes on button press in reset.
 function reset_Callback(hObject, eventdata, handles)
 % hObject    handle to reset (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+a=getappdata(0,'a');
+axes(handles.axes1);
+imshow(a);
 
 % --- Executes on button press in binary.
 function binary_Callback(hObject, eventdata, handles)
 % hObject    handle to binary (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+a=getappdata(0,'a');
+abw=im2bw(a);
+axes(handles.axes1);
+imshow(abw);
