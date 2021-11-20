@@ -22,7 +22,7 @@ Implementation of basic Image Processing techniques using the Image Processing T
 
 ## Screenshot
 
-![App Screenshot](https://github.com/UnnatMistry/Basic-image-processing-using-MATLAB-GUI-/blob/68032fc0aeae1a86609dac26b7ff760122935632/screenshot.png?raw=true)
+![App Screenshot](https://github.com/UnnatMistry/basic-image-processing-using-Matlab-GUI/blob/f73547d6f436a588d7c24ad2bad9040f293cec06/screenshot.png)
 
 
 ## Software 
